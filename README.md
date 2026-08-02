@@ -1,4 +1,56 @@
-📘 Designs.Solutions — Repositório de Soluções Integradas 
-Análise de Processos de Negócios • ITSM • Automação • Framework BPM
+# 📁 Projeto: Sistema de Gestão de Chamados (Help Desk) - Departamento Jurídico
 
-Este repositório reúne designs de solução, documentos técnicos e projetos estruturados que aplicam práticas de Análise de Processos de Negócios (BPM), IT Service Management, fluxos de atendimento e automações.
+## 1. Valor de Negócio & Justificativa (Alinhamento BABOK)
+A falta de controle centralizado e de histórico de atendimentos no departamento jurídico impede o estabelecimento de métricas de acompanhamento de incidentes e afeta a produtividade operacional. 
+
+* **Objetivo Principal:** Criar um fluxo simples e centralizado para abertura, registro e acompanhamento de chamados de suporte técnico utilizando o Microsoft Teams e SharePoint.
+* **Benefícios Esperados:** Organização imediata dos atendimentos e controle centralizado do ciclo de vida dos chamados.
+
+---
+
+## 2. Escopo & Engenharia de Requisitos (Especificação IREB)
+
+### 👥 Partes Interessadas (Stakeholders)
+* **Usuários (Clientes Internos):** Funcionários do departamento jurídico que solicitam suporte técnico.
+* **Equipe de TI:** Técnicos responsáveis pelo atendimento e resolução dos chamados.
+
+### 📝 Histórias de Usuário (User Stories)
+
+#### US01 - Registro e Protocolo de Chamados
+**Como um** Usuário do Departamento Jurídico  
+**Eu quero** abrir um ticket de suporte diretamente pelo Microsoft Teams  
+**Para que** meu atendimento seja registrado sob um número de protocolo único e eu possa acompanhar o progresso.
+
+##### Critérios de Aceitação (Padrão Gherkin)
+* **Dado que** estou no canal de suporte do Teams,
+* **Quando** eu preencher o formulário e enviar a solicitação,
+* **Então** o sistema deve gerar um número de protocolo automático, salvar os dados no SharePoint e me notificar com a confirmação.
+
+#### US02 - Consulta de Ativos (Equipamentos)
+**Como um** Técnico de TI  
+**Eu quero** consultar os dados da máquina vinculada ao chamado do usuário  
+**Para que** eu saiba as especificações técnicas do equipamento antes de iniciar o diagnóstico.
+
+##### Critérios de Aceitação (Padrão Gherkin)
+* **Dado que** estou analisando um ticket ativo no sistema,
+* **Quando** eu acessar os detalhes do chamado,
+* **Então** o sistema deve buscar e exibir os dados do computador (ID, modelo, status) vinculados àquele usuário no Banco de Dados.
+
+#### US03 - Atualização de Status
+**Como um** Técnico de TI  
+**Eu quero** atualizar o status do atendimento (Ex: Em Andamento, Pendente, Resolvido)  
+**Para que** o usuário seja mantido informado sobre a evolução do seu problema.
+
+---
+
+## 🗺️ Roteiro de Implementação (Roadmap)
+
+```mermaid
+gantt
+    title Planejamento de Solução - Help Desk
+    dateFormat  YYYY-MM-DD
+    section Fase 1
+    Organização do Banco de Dados           :active, des1, 2026-08-01, 15d
+    section Fase 2
+    Configuração do Grupo de Trabalho no Teams :         des2, after des1, 15d
+```
